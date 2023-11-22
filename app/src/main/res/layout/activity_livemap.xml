@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:weightSum="10">
+    <androidx.appcompat.widget.Toolbar
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:theme="@style/ToolBarStyle" />
+
+
+    <!--    <androidx.appcompat.widget.Toolbar-->
+<!--        android:id="@+id/toolbar"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="?attr/actionBarSize"-->
+<!--        android:background="@color/colorPrimary"-->
+<!--        app:theme="@style/ToolBarStyle" />-->
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="8.5"
+        android:orientation="vertical">
+
+        <fragment
+            android:id="@+id/map"
+            class="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:weightSum="4"
+        android:background="#f5f5f5"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:layout_weight=".6">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:weightSum="2"
+            android:orientation="vertical"
+            android:layout_weight="1">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="#26d10c"
+                android:layout_weight="0.7"/>
+            <TextView
+                style="@style/TrafficTextViewStyle"
+
+                android:text="Normal traffic"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:weightSum="2"
+            android:orientation="vertical"
+            android:layout_weight="1">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="#d69509"
+                android:layout_weight="0.7"/>
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1.4">
+            <TextView
+                android:id="@+id/slower_traffic"
+                style="@style/TrafficTextViewStyle"/>
+            </ScrollView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:weightSum="2"
+            android:orientation="vertical"
+            android:layout_weight="1">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="#f20808"
+                android:layout_weight="0.7"/>
+            <TextView
+                style="@style/TrafficTextViewStyle"
+                android:text="Slower traffic"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:weightSum="2"
+            android:orientation="vertical"
+            android:layout_weight="1">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="#9c0a0a"
+                android:layout_weight="0.7"/>
+            <TextView
+                style="@style/TrafficTextViewStyle"
+                android:text="Heavy traffic"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:weightSum="5"
+        android:background="#f5f5f5"
+        android:layout_weight=".9">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="1"
+            android:layout_weight=".8">
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/traffic_switch"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:checked="true"
+            android:padding="10dp"
+            android:textColor="@color/white"
+            app:showText="false"/>
+            <TextView
+                android:id="@+id/tv_traffic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/material_on_background_emphasis_high_type"
+                android:gravity="center|top"
+                android:text="Traffic ON"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="4.2">
+
+        <HorizontalScrollView
+            android:id="@+id/horizontalscrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none"
+            android:padding="3dp">
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/normal"
+                    style="@style/TextViewStyle"
+                    android:background="@drawable/view_shape_normal"
+                    android:text="Normal" />
+
+                <TextView
+                    android:id="@+id/hybrid"
+                    style="@style/TextViewStyle"
+                    android:background="@drawable/view_shape_normal"
+                    android:text="Hybrid" />
+
+                <TextView
+                    android:id="@+id/satellite"
+                    style="@style/TextViewStyle"
+                    android:background="@drawable/view_shape_normal"
+                    android:text="Satellite" />
+
+                <TextView
+                    android:id="@+id/terrain"
+                    style="@style/TextViewStyle"
+                    android:background="@drawable/view_shape_normal"
+                    android:text="Terrain" />
+            </LinearLayout>
+
+        </HorizontalScrollView >
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>
