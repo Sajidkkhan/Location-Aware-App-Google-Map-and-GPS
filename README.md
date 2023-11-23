@@ -1,9 +1,9 @@
 # Location-Aware-App-Google-map-and-GPS
 Google Map and GPS Android Java Project
 Google Map and Location Aware App using GPS: 
-Add following dependencies to your project gradle dependencies
-    implementation("com.google.android.gms:play-services-maps:18.2.0")
-    implementation("com.google.android.gms:play-services-location:21.0.1")
+Add following dependencies to your project gradle dependencies \n
+    implementation("com.google.android.gms:play-services-maps:18.2.0")\n
+    implementation("com.google.android.gms:play-services-location:21.0.1")\n
     implementation("com.google.android.gms:play-services-places:17.0.0")
 
 To Access Google Maps, and GPS location based services you need to Add following Permissions to Manefist file.
