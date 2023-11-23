@@ -9,12 +9,14 @@ Add following dependencies to your project gradle dependencies
     implementation("com.google.android.gms:play-services-places:17.0.0")
 
 To Access Google Maps, and GPS location based services you need to Add following Permissions to Manefist file.
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
 
 Also Add API Key to Manefis file.
+
     <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
